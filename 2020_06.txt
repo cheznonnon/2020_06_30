@@ -1,0 +1,219 @@
+
+
+----------==========----------==========----------==========----------
+
+
+"Eat Your Own Catfood."
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2020/06/30
+
+
+BUGFIX
+
+
+	win32/win_txtbox/*.c
+		drag selection auto-scrolling : upper side
+			OLD : position will be max when -1
+			NEW : fixed
+		undo
+			OLD : empty at the first undo
+			NEW : fixed
+	win32/win_txtbox/12_line.c
+		n_win_txtbox_line_select()
+			OLD : the last line is not detected
+			NEW : fixed
+	win32/win_txtbox/19_edit.c
+		n_win_txtbox_edit_input() : 0x03 End of Text
+			OLD : inputtable
+			NEW : ignored
+	win32/win_txtbox/20_refresh_optimized.c
+		n_win_txtbox_refresh_optimized_exit()
+			OLD : crash (heap corruption)
+			NEW : fixed
+	win32/win_simplemenu.c
+		n_win_simplemenu_close() : in some cases
+			OLD : disabled menu is clickable
+			NEW : fixed
+
+	CatPad
+		standalone version : menu : grayed items
+			OLD : inputtable
+			NEW : fixed
+	Nonnon Paint
+		Multi-Layer : rename after the first save
+			OLD : not written in an INI file
+			NEW : fixed
+		Multi-Layer : Resizer : "Whole Grab" and Grabber are ON
+			OLD : not previewed
+			NEW : fixed
+		Normal Mode : Grabber : when grabber button is on
+			OLD : effect a whole picture
+			NEW : grabbed area only
+
+
+NEW_FEATURE
+
+
+	neutral/ini.c
+		comment
+			NEW : "use n_win_exedir2curdir() with a relative path"
+
+	win32/win_txtbox.c
+		comment
+			NEW : "LISTBOX needs n_win_txtbox_line_set(), don't use add()"
+
+	NonnonApps
+		icon number
+			NEW : number is changed
+			[!] : remake is needed
+	Nonnon Memo
+		released
+			NEW : a sticky note-like app
+	Nonnon Paint
+		Canvas : margin : hamburger button
+			NEW : the same as a title bar menu
+			[!] : for pen input
+		Save Button : Layer
+			OLD : same as switcher
+			NEW : a new icon
+		Key Bindings : "Z"
+			OLD : color picker
+			NEW : Quick Eraser
+		Multi-Layer : layer number : default
+			OLD : 12
+			NEW : 16
+		Multi-Layer : layer number
+			OLD : fixed 16
+			NEW : you can control via nonnon_paint.ini
+		Grabber : when selected : margin menu click
+			OLD : white
+			NEW : white invisible
+		Pen : Eraser : WinTab and Quick Eraser
+			NEW : a cursor will be changed
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2020/06/20
+
+
+BUGFIX
+
+
+	win32/win_scrolbar.c
+		n_win_scrollbar_ui_uxtheme() : Grip : condition
+			OLD : inaccurate
+			NEW : fixed
+			[!] : true/false reversed for n_win_scrollbar_is_thumb_minimal()
+			[x] : already exist from the first release @ 2019/02/20
+
+	Nonnon Paint
+		Tool Window and Layer Window
+			OLD : closed when press Alt + F4
+			NEW : fixed
+		Multi-Layer : "Whole Grab" is ON : filter #1
+			OLD : you cannot filter grabbed area only
+			NEW : fixed
+		Multi-Layer : "Whole Grab" is ON : filter #2
+			OLD : filter effect is delayed into two phase
+			NEW : fixed
+		Grabber : clicking is released on scrollbars
+			OLD : handled as mouse is clicked
+			NEW : fixed
+			[x] : BUGFIX @ 2020/06/10
+		Multi-Layer : Grabber
+			OLD : alpha value will be ignored at finish
+			NEW : fixed
+
+
+NEW_FEATURE
+
+
+	win32/gdi/frame.c
+		N_GDI_FRAME_AQUA
+			NEW : more beautiful than older
+
+	Nonnon Paint
+		Pen : Air : anti-alias
+			NEW : re-tuned
+		Color History
+			NEW : richer than older
+			[!] : arrange gamma 0.5/1.5 at the both sides
+		Multi-Layer : layer number
+			OLD :  8
+			NEW : 12
+		Readme
+			NEW : topic "Image and Viewpoint" is added
+		Multi-Layer : save
+			NEW : faster than older
+			[!] : more memory is needed but faster
+		Gray Canvas
+			NEW : alpha will be magenta
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
+2020/06/10
+
+
+BUGFIX
+
+
+	Nonnon Paint
+		Thumbnail
+			OLD : only display in small area in some cases
+			NEW : fixed
+		Thumbnail
+			OLD : possibility of double-free
+			NEW : fixed
+			[!] : when display mode is changed
+		Canvas : Scrollbars
+			OLD : a cursor is not changed
+			NEW : fixed
+		source code
+			OLD : inaccurate naming
+			NEW : fixed
+		Gray Canvas
+			OLD : alpha will be magenta
+			NEW : resotore older code
+			[?] : condition is inaccurate
+
+
+NEW_FEATURE
+
+
+	win32/win_txtbox.c
+		accent marks (diacritical marks)
+			NEW : supported
+
+	Nonnon Paint
+		Multi-Layer : layer window : shade
+			NEW : remember the last state
+		Multi-Layer : "Whole Grab"
+			NEW : editable on an unselected layer
+		Multi-Layer : layer window : arrow keys
+			OLD : swap
+			NEW : move selection
+			[!] : Ctrl key is needed for swapping
+			[?] : for multiple renaming
+		Pen : Air
+			NEW : re-tuned
+
+
+----------==========----------==========----------==========----------
+
