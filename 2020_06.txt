@@ -12,6 +12,24 @@
 Change Log
 
 
+2020/06/30 #1
+
+
+BUGFIX
+
+
+	Nonnon Paint
+		Layer Window : when renaming
+			OLD : move and swap are acceptable
+			NEW : fixed
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2020/06/30
 
 
