@@ -12,6 +12,24 @@
 Change Log
 
 
+2020/06/30 #2
+
+
+BUGFIX
+
+
+	Nonnon Paint
+		Multi-Layer : first saved data
+			OLD : "0.png" is not output when not painted
+			NEW : fixed
+
+
+----------==========----------==========----------==========----------
+
+
+Change Log
+
+
 2020/06/30 #1
 
 
